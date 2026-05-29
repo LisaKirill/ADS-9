@@ -7,7 +7,9 @@
 #include "tree.h"
 
 int main() {
-  static_cast<void>(std::system("mkdir -p result"));
+  int status = std::system("mkdir -p result");
+  (void)status; 
+
   std::ofstream out("result/experiment.csv");
   out << "n,getPermAll,getPerm1,getPerm2\n";
   for (int n = 3; n <= 6; ++n) {
