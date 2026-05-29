@@ -6,21 +6,21 @@
 #include <algorithm>
 
 struct Node {
-    char val;
-    std::vector<Node*> children;
-    explicit Node(char v) : val(v) {}
-    ~Node() {
-        for (auto child : children) delete child;
-    }
+  char val;
+  std::vector<Node*> children;
+  explicit Node(char v) : val(v) {}
+  ~Node() {
+    for (auto child : children) delete child;
+  }
 };
 
 class PMTree {
-public:
-    std::vector<Node*> roots;
-    PMTree(const std::vector<char>& in);
-    ~PMTree() {
-        for (auto root : roots) delete root;
-    }
+ public:
+  std::vector<Node*> roots;
+  explicit PMTree(const std::vector<char>& in);
+  ~PMTree() {
+    for (auto root : roots) delete root;
+  }
 };
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
